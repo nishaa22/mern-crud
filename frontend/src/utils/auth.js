@@ -1,6 +1,8 @@
+import BASE_URL from './api';
+
 export const signup = async (signupData) => {
     try {
-        const response = await fetch('http://localhost:8080/auth/signup', {
+        const response = await fetch(`${BASE_URL}/auth/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -16,7 +18,7 @@ export const signup = async (signupData) => {
 
 export const login = async (loginData) => {
     try {
-        const response = await fetch('http://localhost:8080/auth/login', {
+        const response = await fetch(`${BASE_URL}/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -32,7 +34,7 @@ export const login = async (loginData) => {
 
 export const getProfile = async (token) => {
     try {
-        const response = await fetch('http://localhost:8080/auth/profile', {
+        const response = await fetch(`${BASE_URL}/auth/profile`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

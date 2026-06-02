@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Lock, Shield, ArrowRight } from "lucide-react"
 import toast from "react-hot-toast"
+import BASE_URL from "../utils/api"
 
 const ChangePassword = () => {
     const [oldPassword, setOldPassword] = useState("");
@@ -14,7 +15,7 @@ const ChangePassword = () => {
     const handlePasswordChange = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch("http://localhost:8080/auth/change-password", {
+            const response = await fetch(`${BASE_URL}/auth/change-password`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

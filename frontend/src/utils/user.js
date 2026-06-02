@@ -1,6 +1,8 @@
+import BASE_URL from './api';
+
 export const getUsers = async (token) => {
     try {
-        const response = await fetch('http://localhost:8080/users', {
+        const response = await fetch(`${BASE_URL}/users`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -16,7 +18,7 @@ export const getUsers = async (token) => {
 
 export const getUserById = async (id, token) => {
     try {
-        const response = await fetch(`http://localhost:8080/users/${id}`, {
+        const response = await fetch(`${BASE_URL}/users/${id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -32,7 +34,7 @@ export const getUserById = async (id, token) => {
 
 export const createUser = async (userData, token) => {
     try {
-        const response = await fetch('http://localhost:8080/users', {
+        const response = await fetch(`${BASE_URL}/users`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -49,7 +51,7 @@ export const createUser = async (userData, token) => {
 
 export const updateUser = async (id, userData, token) => {
     try {
-        const response = await fetch(`http://localhost:8080/users/${id}`, {
+        const response = await fetch(`${BASE_URL}/users/${id}`, {
             method: 'PUT',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -66,7 +68,7 @@ export const updateUser = async (id, userData, token) => {
 
 export const deleteUser = async (id, token) => {
     try {
-        const response = await fetch(`http://localhost:8080/users/${id}`, {
+        const response = await fetch(`${BASE_URL}/users/${id}`, {
             method: 'DELETE',
             headers: {
                 'Authorization': `Bearer ${token}`,
